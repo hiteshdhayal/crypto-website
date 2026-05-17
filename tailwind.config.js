@@ -8,14 +8,14 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          light: '#f4f7fe',
-          blue: '#186ade',
-          dark: '#0b1329',
-          card: '#ffffff',
-          border: '#e2e8f0',
-          success: '#10b981',
-          danger: '#ef4444',
-          warning: '#f59e0b',
+          light: '#FAF8F5',
+          blue: '#b91a30', // Traditional Torii Crimson Red
+          dark: '#1a202c',  // Sumi Ink Charcoal
+          card: 'rgba(255, 255, 255, 0.78)', // Elegant glass washi panels
+          border: 'rgba(185, 26, 48, 0.12)', // Subtle Torii-infused border lines
+          success: '#2e7d32', // Bamboo Green
+          danger: '#c62828',  // Imperial Crimson
+          warning: '#f9a825',
         }
       },
       fontFamily: {

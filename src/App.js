@@ -74,7 +74,16 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f7fe] flex flex-col font-sans antialiased text-brand-dark pb-12">
+    <div 
+      className="min-h-screen flex flex-col font-sans antialiased text-brand-dark pb-12"
+      style={{
+        backgroundImage: "url('/mount_fuji_bg.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       {/* Premium Header */}
       <Header />
 
@@ -109,7 +118,7 @@ const App = () => {
           <div className="relative" ref={currencyDropdownRef}>
             <button
               onClick={() => setCurrencyOpen(!currencyOpen)}
-              className={`flex items-center space-x-2.5 px-5 py-3 bg-white border border-brand-border rounded-2xl shadow-premium font-extrabold text-sm text-brand-dark hover:bg-slate-50 transition ${
+              className={`flex items-center space-x-2.5 px-5 py-3 bg-brand-card border border-brand-border rounded-2xl shadow-premium font-extrabold text-sm text-brand-dark hover:bg-slate-50/50 backdrop-blur-md transition ${
                 currencyOpen ? 'border-brand-blue ring-2 ring-brand-blue/5' : ''
               }`}
             >
@@ -118,7 +127,7 @@ const App = () => {
             </button>
 
             {currencyOpen && (
-              <div className="absolute left-0 mt-2 w-32 bg-white border border-brand-border rounded-2xl shadow-dropdown z-50 p-1">
+              <div className="absolute left-0 mt-2 w-32 bg-brand-card border border-brand-border rounded-2xl shadow-dropdown z-50 p-1 backdrop-blur-md">
                 {currencyOptions.map((curr) => {
                   const isSelected = baseCurrency.toUpperCase() === curr;
                   return (
@@ -131,7 +140,7 @@ const App = () => {
                       className={`flex items-center justify-between w-full px-3 py-2 rounded-xl text-left text-xs font-bold transition ${
                         isSelected 
                           ? 'bg-brand-blue/5 text-brand-blue font-extrabold' 
-                          : 'text-slate-600 hover:bg-slate-50'
+                          : 'text-slate-600 hover:bg-slate-50/50'
                       }`}
                     >
                       <span>{curr}</span>
@@ -144,7 +153,7 @@ const App = () => {
           </div>
 
           {/* Search by Coin Input Bar */}
-          <div className="flex-1 max-w-md flex items-center space-x-2.5 px-4 py-3 bg-white border border-brand-border rounded-2xl shadow-premium">
+          <div className="flex-1 max-w-md flex items-center space-x-2.5 px-4 py-3 bg-brand-card border border-brand-border rounded-2xl shadow-premium backdrop-blur-md">
             <Search className="w-5 h-5 text-slate-400 flex-shrink-0" />
             <input
               type="text"
